@@ -1,0 +1,40 @@
+# Import pandas
+import pandas as pd
+
+# Create the student data
+data = {
+    "StudentID": [101,102,103,104,105,106,107,108,109,110],
+    "Name": ["Alice","Bob","Charlie","Diana","Ethan","Fiona","George","Hannah","Ivan","Julia"],
+    "Age": [20,21,19,22,20,21,23,19,22,20],
+    "Marks": [88,75,92,65,78,85,70,95,60,80],
+    "Grade": ["A","B","A","C","B","A","B","A","C","B"]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Save DataFrame as CSV
+df.to_csv("students.csv", index=False)
+
+# Reload CSV into a new DataFrame
+df2 = pd.read_csv("students.csv")
+
+# Display first 3 rows
+print("First 3 rows:")
+print(df2.head(3))
+
+# Display statistical summary
+print("\nStatistical Summary:")
+print(df2.describe())
+
+# Display shape
+print("\nShape of DataFrame:")
+print(df2.shape)
+
+# Display data types
+print("\nData Types:")
+print(df2.dtypes)
+
+# Display DataFrame info
+print("\nDataFrame Info:")
+print(df2.info())
